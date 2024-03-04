@@ -1,5 +1,5 @@
-[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/pmdavid/nutritional-planning-example/blob/main/README.md)
-[![es](https://img.shields.io/badge/lang-es-red.svg)](https://github.com/pmdavid/nutritional-planning-example/blob/main/README.es.md)
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](https://github.com/pmdavid/nutritional-planning-example/blob/master/README.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](https://github.com/pmdavid/nutritional-planning-example/blob/master/README.es.md)
 
 # Features explanation
 
