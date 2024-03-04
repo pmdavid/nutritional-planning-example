@@ -5,7 +5,7 @@
 
 Personal repository as an example to visualize the implementation of several specific features that will be explained below, based on a Hexagonal Architecture.
 
-The code has been simplified by eliminating common processes/checks, to leave only the interesting technical part.
+The code has been simplified by removing common processes/checks, to leave only the interesting technical part.
 
 ## Feature 1: BULK process for DDBB connection efficiency
 
