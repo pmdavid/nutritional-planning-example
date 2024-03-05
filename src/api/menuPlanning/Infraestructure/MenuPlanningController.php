@@ -13,11 +13,11 @@ class MenuPlanningController extends ApiV3BaseController
     public function varietyMode()
     {
         try {
-            $dbRepository                                 = new MenuPlanningMysqlRepository();
-            $planningBlockMysqlRepository                 = new PlanningBlockMysqlRepository();
-            $recipeNutritionalArchitectureMysqlRepository = new RecipeNutritionalArchitectureMysqlRepository();
+            $menuPlanningRepository                  = new MenuPlanningMysqlRepository();
+            $planningBlocRepository                  = new PlanningBlockMysqlRepository();
+            $recipeNutritionalArchitectureRepository = new RecipeNutritionalArchitectureMysqlRepository();
 
-            $varietyModeSwitcher = new VarietyModeSwitcher($dbRepository, $planningBlockMysqlRepository, $recipeNutritionalArchitectureMysqlRepository);
+            $varietyModeSwitcher = new VarietyModeSwitcher($menuPlanningRepository, $planningBlocRepository, $recipeNutritionalArchitectureRepository);
             $athlete             = $this->getLoggedAthlete();
 
             $data = $varietyModeSwitcher->switch($athlete);
