@@ -14,7 +14,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=7.2.0|<=7.2.34",
+        "php": "7.3",
         "ext-zip": "*",
         "ext-json": "*",
         "ext-gd": "*",
