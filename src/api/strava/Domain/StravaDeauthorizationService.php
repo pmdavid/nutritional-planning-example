@@ -42,6 +42,8 @@ class StravaDeauthorizationService
         // Irrelevant checks...
         // ...
 
+        if (!$this->stravaAPIClient) throw new CustomException();
+
         $userAccessToken = $this->stravaAuthRepository->findAccessTokenByAthleteId($userId);
         $response        = $this->stravaAPIClient->userDeauth($userAccessToken);
 

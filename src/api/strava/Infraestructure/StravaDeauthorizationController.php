@@ -4,21 +4,10 @@ namespace api\strava\Infraestructure;
 use api\controllers\v3\ApiV3BaseController;
 use api\exceptions\InvalidAccessException;
 use api\exceptions\webhook\InvalidJsonDataTypeNotFoundException;
-use api\strava\Domain\StravaAPIClientInterface;
-use api\strava\Domain\StravaUserAuthRepositoryInterface;
 use StravaDeauth;
 
 class StravaDeauthorizationController extends ApiV3BaseController
 {
-    private $stravaDeauth;
-
-    public function __construct(StravaUserAuthRepositoryInterface $stravaAuthRepository, StravaAPIClientInterface $stravaAPIService)
-    {
-        $this->stravaDeauth = new StravaDeauth($stravaAuthRepository);
-
-        parent::__construct();
-    }
-
     public function actionIndex()
     {
         try {
@@ -28,8 +17,12 @@ class StravaDeauthorizationController extends ApiV3BaseController
             // ... Other irrelevant validations
             // ...
 
+            $stravaAuthRepository = new StravaUserAuthMysqlRepository();
+            $stravaAPIClient      = new StravaAPIClient();
+            $stravaDeauth         = new StravaDeauth($stravaAuthRepository, $stravaAPIClient);
+
             // Calling use case
-            $this->stravaDeauth->deauthorize($athlete->getId());
+            $stravaDeauth->deauthorize($athlete->getId());
 
             return $this->sendResponse();
 

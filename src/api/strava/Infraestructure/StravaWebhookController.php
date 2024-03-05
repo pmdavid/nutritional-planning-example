@@ -8,15 +8,6 @@ use StravaWebhookHandler;
 
 class StravaWebhookController extends ApiV3BaseController
 {
-    private $stravaWebhookService;
-
-    public function __construct(StravaUserAuthRepositoryInterface $stravaAuthRepository)
-    {
-        $this->stravaWebhookService = new StravaWebhookHandler($stravaAuthRepository);
-
-        parent::__construct();
-    }
-
     public function actionIndex()
     {
         try {
@@ -24,7 +15,10 @@ class StravaWebhookController extends ApiV3BaseController
             // ... Other irrelevant validations
             // ...
 
-            $this->stravaWebhookService->handleStravaEvent($postData);
+            $stravaAuthRepository = new StravaUserAuthMysqlRepository();
+            $stravaWebhookHandler = new StravaWebhookHandler($stravaAuthRepository);
+
+            $stravaWebhookHandler->handleStravaEvent($postData);
 
             return $this->sendResponse();
 

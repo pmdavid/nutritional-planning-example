@@ -6,7 +6,7 @@ namespace api\planningBlock\infraestructure;
 
 use PlanningBlockRepositoryInterface;
 
-class PlanningBlockRepositoryInterfaceMysql extends BaseRepository implements PlanningBlockRepositoryInterface
+class PlanningBlockMysqlRepository extends BaseRepository implements PlanningBlockRepositoryInterface
 {
     public function findBlocksByMenuPlanningIdAndWeeks(int $menuPlanningId): array
     {
