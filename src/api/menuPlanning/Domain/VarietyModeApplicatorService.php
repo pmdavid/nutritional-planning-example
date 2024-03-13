@@ -79,7 +79,7 @@ class VarietyModeApplicatorService
     }
 
     /**
-     * Publish event. This could be extracted to a service
+     * Publish event. This could be extracted to a new service
      */
     private function publishMenuPlanningUpdatedEvent(MenuPlanning $menuPlanning, Athlete $athlete)
     {

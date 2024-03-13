@@ -39,7 +39,15 @@ Aquí podemos ver:
 ```
 
 
-## Feature 3: Validator | Ejemplo de validator para validar tipos de campos, etc..
+## Feature 3: Event | Example of launching an event via EventBus
+
+Example of event publication to update a property (Event processor has not been implemented).
+
+```bash
+ VarietyModeApplicatorService.php -> publishMenuPlanningUpdatedEvent()
+```
+
+## Validator | Ejemplo de validator para validar tipos de campos, etc..
 
 - Validación de distintos campos usando lib externa
 - Filtrado de caracteres/emojis con un helper XssSecurity

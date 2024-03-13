@@ -36,6 +36,15 @@ Here we can see:
   api/strava/Infraestructure/StravaDeauthorizationController.php -> StravaDeauthorizationService.php
 ```
 
+## Feature 3: Evento | Ejemplo de lanzamiento de un evento vía EventBus
+
+Ejemplo de publicación de evento para actualizar una propiedad (No se ha implementado el procesador de dicho evento)
+
+```bash
+ VarietyModeApplicatorService.php -> publishMenuPlanningUpdatedEvent()
+```
+
+
 ## Validator: Example of fields validator
 
 - Validation of different fields using lib Ratkit
