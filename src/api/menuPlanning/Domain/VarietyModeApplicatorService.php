@@ -3,6 +3,8 @@
 namespace src\api\menuPlanning\Domain;
 
 use api\athlete\Domain\Athlete;
+use api\events\EventBus;
+use api\events\MenuPlanningEventBuilder;
 use api\menuPlanning\Domain\MenuPlanning;
 use api\menuPlanning\Domain\MenuRecipe;
 use api\nutritionalArchitecture\Domain\RecipeNutritionalArchitectureRepositoryInterface;
@@ -14,11 +16,15 @@ class VarietyModeApplicatorService
 {
     private $recipeRecalculatorService;
     private $planningBlockRepository;
+    private $menuPlanningEventBuilder;
+    private $eventBus;
 
     public function __construct(PlanningBlockRepositoryInterface $planningBlockRepository, RecipeNutritionalArchitectureRepositoryInterface $recipeNutritionalArchitectureRepository)
     {
         $this->planningBlockRepository    = $planningBlockRepository;
         $this->recipeRecalculatorService  = new RecipeRecalculatorService($recipeNutritionalArchitectureRepository);
+        $this->menuPlanningEventBuilder   = new MenuPlanningEventBuilder();
+        $this->eventBus                   = new EventBus();
     }
 
     public function applyVarietyMode(Athlete $athlete, MenuPlanning $menuPlanning): void
@@ -28,6 +34,9 @@ class VarietyModeApplicatorService
 
         // Update the recipes of the blocks with the new varied recipes.
         $this->setVarietyRecipes($athlete, $blocksToUpdate);
+
+        // Launch an EVENT to update MenuPlanning mode
+        $this->publishMenuPlanningUpdatedEvent($menuPlanning, $athlete);
     }
 
     private function setVarietyRecipes(Athlete $athlete, array $blocksToUpdate): void
@@ -67,5 +76,14 @@ class VarietyModeApplicatorService
     private function getAlternativeRecipeByBlock(Athlete $athlete, PlanningBlock $planningBlock): ?MenuRecipe
     {
         // Process irrelevant to the example. Gets an alternative recipe to the existing one.
+    }
+
+    /**
+     * Publish event. This could be extracted to a service
+     */
+    private function publishMenuPlanningUpdatedEvent(MenuPlanning $menuPlanning, Athlete $athlete)
+    {
+        $menuPlanningUpdatedEvent = $this->menuPlanningEventBuilder->buildEvent($menuPlanning, $athlete, 'variety');
+        $this->eventBus->publish($menuPlanningUpdatedEvent);
     }
 }

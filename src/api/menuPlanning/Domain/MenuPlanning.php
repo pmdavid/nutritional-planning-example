@@ -8,6 +8,8 @@ final class MenuPlanning extends ORMName
     //* Some extra orm settings */
 
     private $id;
+    private $uuid;
+    private $athleteUuid;
     private $mode;
 
     public function __construct(int $id, string $mode)
@@ -19,6 +21,16 @@ final class MenuPlanning extends ORMName
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getUuid(): string
+    {
+        return $this->uuid;
+    }
+
+    public function athleteUuid(): string
+    {
+        return $this->athleteUuid;
     }
 
     public function getMode(): string

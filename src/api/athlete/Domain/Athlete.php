@@ -4,14 +4,16 @@ namespace api\athlete\Domain;
 
 final class Athlete extends ORMName
 {
-    protected $table = 'menu_recipe';
+    protected $table = 'athlete';
     //* Some extra orm settings */
 
     private $id;
+    private $uuid;
 
-    public function __construct(int $id, string $mode)
+    public function __construct(int $id, string $uuid)
     {
         $this->id             = $id;
+        $this->uuid           = $uuid;
     }
 
     public function getId(): int
@@ -19,7 +21,10 @@ final class Athlete extends ORMName
         return $this->id;
     }
 
-
+    public function getUuid(): string
+    {
+        return $this->uuid;
+    }
 
 }
 
