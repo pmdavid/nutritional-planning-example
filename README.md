@@ -36,9 +36,9 @@ Here we can see:
   api/strava/Infraestructure/StravaDeauthorizationController.php -> StravaDeauthorizationService.php
 ```
 
-## Feature 3: Evento | Ejemplo de lanzamiento de un evento vía EventBus
+## Feature 3: Event | Example of launching an event via EventBus
 
-Ejemplo de publicación de evento para actualizar una propiedad (No se ha implementado el procesador de dicho evento)
+Example of event publication to update a property (Event processor has not been implemented).
 
 ```bash
  VarietyModeApplicatorService.php -> publishMenuPlanningUpdatedEvent()

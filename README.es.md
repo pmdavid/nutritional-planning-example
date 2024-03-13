@@ -39,9 +39,9 @@ Aquí podemos ver:
 ```
 
 
-## Feature 3: Event | Example of launching an event via EventBus
+## Feature 3: Evento | Ejemplo de lanzamiento de un evento vía EventBus
 
-Example of event publication to update a property (Event processor has not been implemented).
+Ejemplo de publicación de evento para actualizar una propiedad (No se ha implementado el procesador de dicho evento)
 
 ```bash
  VarietyModeApplicatorService.php -> publishMenuPlanningUpdatedEvent()
