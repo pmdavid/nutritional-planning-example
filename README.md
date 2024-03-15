@@ -13,7 +13,7 @@ The code has been simplified by removing common processes/checks, to leave only 
   api/menuPlanning/Infraestructure/MenuPlanningController.php -> VarietyModeSwitcher.php -> RecipeRecalculatorService.php
 ```
 
-Example of an endpoint that is responsible for applying a change of various recipes, associated with the concept of **block** (meal) and **planning** (diet) existing in the code. The idea of this is to highlight the structure iteration process and the BULK process to dump data into DDBB in a single INSERT, thus **avoiding database calls for each iteration of a loop.**
+Example of an endpoint that applies changes to the meals (varying the meals of the planning) associated with the concept of **block** (meal) and **planning** (diet) existing in the code. The idea of this is to highlight the structure iteration process and the BULK process to dump data into DDBB in a single INSERT, thus **avoiding database calls for each iteration of a loop.**
 
 Other highlights:
 
