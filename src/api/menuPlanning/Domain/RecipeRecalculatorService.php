@@ -43,7 +43,7 @@ class RecipeRecalculatorService
 
     public function recalculateMenuRecipeBySuitability(MenuRecipe $menuRecipe, MenuRecipe $originalMenuRecipe, int $suitableKcal): void
     {
-        // Some irrelevant calculations about the recipe, services deleted to simplify the repository
+        // Some irrelevant calculations about the recipe, services deleted to simplify the project
         $recipeRecalculated = $this->recipeIngredientsRecalculatorService->realculateBySuitableKcal($menuRecipe, $suitableKcal);
         $recipeRecalculated = $this->recipeMacronutrientsRecalculatorServices->realculateBySuitableKcal($recipeRecalculated, $suitableKcal);
 
