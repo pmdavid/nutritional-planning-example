@@ -3,7 +3,7 @@
 namespace api\strava\Domain;
 
 
-final class StravaUserAuth extends ORMName
+final class StravaUserAuth
 {
     protected $table = 'strava_user_auth';
     /* Some extra ORM settings

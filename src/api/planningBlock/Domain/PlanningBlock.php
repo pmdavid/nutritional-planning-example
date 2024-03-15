@@ -4,7 +4,7 @@ namespace api\planningBlock\Domain;
 
 use api\menuPlanning\Domain\MenuRecipe;
 
-final class PlanningBlock extends ORMName
+final class PlanningBlock
 {
     protected $table = 'planning_block';
     /* Some extra ORM settings

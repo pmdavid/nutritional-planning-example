@@ -2,7 +2,7 @@
 
 namespace api\menuPlanning\Domain;
 
-final class MenuPlanning extends ORMName
+final class MenuPlanning
 {
     protected $table = 'menu_planning';
     //* Some extra orm settings */
