@@ -7,6 +7,12 @@ Personal repository as an example to visualize the implementation of several spe
 
 The code has been simplified by removing common processes/checks, to leave only the interesting technical part.
 
+NOTE: No ORM has been implemented. In case of using it, the repository classes would be based on the ORM to manage the persistence. Example with Doctrine:
+
+```bash
+class DoctrineNameRepository extends DoctrineRepository implements NameRepositoryInterface
+```
+
 ## Feature 1: BULK process for DDBB connection efficiency
 
 ```bash

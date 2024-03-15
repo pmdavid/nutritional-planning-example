@@ -5,7 +5,14 @@
 
 Repositorio personal a modo de ejemplo para visualizar la implementación de varias features concretas que se van a explicar a continuación, **en base a una Arquitectura Hexagonal**. 
 
-El código se ha simplificado eliminando procesos/comprobaciones comunes, para dejar solo la parte técnica interesante.
+El repositorio se ha simplificado eliminando procesos/comprobaciones/scripts comunes, para dejar solo la parte técnica interesante.
+
+NOTA: No se ha implementado ningun ORM. En caso de usarlo, los repositorios obviamente se basarian en el ORM para gestionar la persistencia. Ejemplo con Doctrine:
+
+```bash
+class DoctrineNameRepository extends DoctrineRepository implements NameRepositoryInterface
+```
+
 
 ## Feature 1: Proceso BULK para eficiencia en conexiones a DDBB
 
