@@ -1,6 +1,6 @@
 <?php
 
-namespace api\strava\Infraestructure;
+namespace api\strava\Infraestructure\persistence;
 
 use api\strava\Domain\StravaUserAuth;
 use api\strava\Domain\StravaUserAuthRepositoryInterface;

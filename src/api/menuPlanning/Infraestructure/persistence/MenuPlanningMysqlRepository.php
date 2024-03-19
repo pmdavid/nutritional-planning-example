@@ -1,6 +1,6 @@
 <?php
 
-namespace api\menuPlanning\Infraestructure;
+namespace api\menuPlanning\Infraestructure\persistence;
 
 use api\menuPlanning\Domain\MenuPlanning;
 use api\menuPlanning\Domain\MenuPlanningRepositoryInterface;

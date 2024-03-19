@@ -4,8 +4,9 @@ namespace api\menuPlanning\Infraestructure;
 
 use api\controllers\v3\ApiV3BaseController;
 use api\exceptions\InvalidAccessException;
+use api\menuPlanning\Infraestructure\persistence\MenuPlanningMysqlRepository;
 use api\nutritionalArchitecture\RecipeNutritionalArchitectureMysqlRepository;
-use api\planningBlock\infraestructure\PlanningBlockMysqlRepository;
+use api\planningBlock\infraestructure\persistence\PlanningBlockMysqlRepository;
 use src\api\planning\Application\VarietyModeSwitcher;
 
 class MenuPlanningController extends ApiV3BaseController

@@ -4,6 +4,7 @@ namespace api\strava\infraestructure;
 use api\controllers\v3\ApiV3BaseController;
 use api\exceptions\InvalidAccessException;
 use api\exceptions\webhook\InvalidJsonDataTypeNotFoundException;
+use api\strava\Infraestructure\persistence\StravaUserAuthMysqlRepository;
 use StravaWebhookHandler;
 
 class StravaWebhookController extends ApiV3BaseController

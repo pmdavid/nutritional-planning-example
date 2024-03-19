@@ -1,9 +1,11 @@
 <?php
 
 
-namespace api\planningBlock\infraestructure;
+namespace api\planningBlock\infraestructure\persistence;
 
 
+use api\planningBlock\Domain\PlanningBlock;
+use api\planningBlock\infraestructure\BaseRepository;
 use PlanningBlockRepositoryInterface;
 
 class PlanningBlockMysqlRepository extends BaseRepository implements PlanningBlockRepositoryInterface
